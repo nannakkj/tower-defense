@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://4lorc7un5oyo"]
+
+[ext_resource type="Script" uid="uid://dg3nqxtxerr2e" path="res://script/range.gd" id="1_qpnfu"]
+[ext_resource type="Script" uid="uid://cktvixm2naqxb" path="res://script/visivelrange.gd" id="2_6ca72"]
+[ext_resource type="PackedScene" uid="uid://cnnm1d5vcnm87" path="res://prefab/tiro.tscn" id="2_yprav"]
+[ext_resource type="Texture2D" uid="uid://ccg6pk8q8711" path="res://sprites/icon.svg" id="3_yprav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
+radius = 197.129
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(132, 131)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qpnfu")
+project = ExtResource("2_yprav")
+
+[node name="Range" type="Area2D" parent="."]
+z_index = -1
+script = ExtResource("2_6ca72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_q6r6c")
+one_way_collision_margin = 0.0
+
+[node name="mouse" type="CollisionShape2D" parent="Range"]
+position = Vector2(-1.871, -1.44501)
+shape = SubResource("RectangleShape2D_q6r6c")
+debug_color = Color(0.802424, 0.218177, 0.874708, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("3_yprav")

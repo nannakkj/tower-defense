@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://grb5r4ybqic4"]
+
+[ext_resource type="Script" uid="uid://cpy2hikpbg2vu" path="res://script/text.gd" id="1_fyyoa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fyyoa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(1, 0.592157, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "10/10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(0, 0.638955, 1.34766e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0.254902, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 28
+text = "$5345"
+horizontal_alignment = 1
+vertical_alignment = 2

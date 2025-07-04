@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkvljej50jclg"]
+
+[ext_resource type="Script" uid="uid://riavvt05xwjw" path="res://script/pathwalk.gd" id="1_mxmy4"]
+[ext_resource type="Script" uid="uid://bu0df30ogjtgj" path="res://script/morrer.gd" id="2_4ewma"]
+[ext_resource type="Texture2D" uid="uid://ccg6pk8q8711" path="res://sprites/icon.svg" id="2_db0u6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meiqb"]
+size = Vector2(131.717, 128.698)
+
+[node name="caminho" type="PathFollow2D"]
+rotation = -0.0460379
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_mxmy4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["inimigo"]]
+script = ExtResource("2_4ewma")
+
+[node name="caminho" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 0.0523599
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_db0u6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+rotation = 0.0523599
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_meiqb")

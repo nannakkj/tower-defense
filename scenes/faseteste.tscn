@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3yy1a5p8i1ny"]
+
+[ext_resource type="PackedScene" uid="uid://5xogo25dvyvn" path="res://prefab/Hotbar.tscn" id="1_f38dl"]
+[ext_resource type="Script" uid="uid://td3mbtpajlho" path="res://script/chao.gd" id="2_bx1k0"]
+[ext_resource type="PackedScene" uid="uid://grb5r4ybqic4" path="res://prefab/textos.tscn" id="3_5sqr1"]
+
+[sub_resource type="Curve2D" id="Curve2D_0e48y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, 306, 0, 0, 0, 0, 580, 306, 0, 0, 0, 0, 580, 242, 0, 0, 0, 0, 1156, 242)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(1148, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(1152, 189)
+
+[node name="Main" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-4, 14)
+curve = SubResource("Curve2D_0e48y")
+
+[node name="Hotbar" parent="." instance=ExtResource("1_f38dl")]
+offset_left = 264.0
+offset_right = 952.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(167, 459)
+script = ExtResource("2_bx1k0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(407, 21)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(409, -361.5)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Control" parent="." instance=ExtResource("3_5sqr1")]
